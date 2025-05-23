@@ -15,10 +15,10 @@ public sealed class CommonConstant
     public const string UpdateCustomerToolDescription = "Updates an existing customer in the system.";
     public const string AskBackendStructureDocumentToolName = "ask_backend_structure";
     public const string AskBackendStructureDocumentToolDescription =
-        "Prompt instructing the tool to analyze the backend project structure document and generate application code based on its content.";
+        "Analyze the backend project structure document and generate application code based on its content.";
     public const string AskBackendTestsDocumentToolName = "ask_backend_tests";
     public const string AskBackendTestsDocumentToolDescription =
-        "Prompt instructing the tool to analyze the unit testing guidelines document and generate corresponding unit test code for the application components.";
+        "Analyze the unit testing guidelines document and generate corresponding unit test code for the application components.";
     public const string CustomerIdPropertyDescription = "The identity number of the customer.";
     public const string CustomerNamePropertyDescription = "The name of the customer.";
     public const string CustomerEmailPropertyDescription = "The email address of the customer.";
