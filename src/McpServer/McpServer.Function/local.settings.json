@@ -1,0 +1,13 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated"
+  },
+  "MockApi": {
+    "BaseUrl": "https://localhost:5001"
+  },
+  "KernelMemory": {
+    "BaseUrl": "http://localhost:9001"
+  }
+}
