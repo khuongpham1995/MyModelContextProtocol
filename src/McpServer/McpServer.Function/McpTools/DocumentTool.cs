@@ -45,7 +45,7 @@ public class DocumentTool(
 
     [Function(nameof(CommonConstant.AskBackendTestsDocumentToolName))]
     public async Task<ResponseModel<string>> AskBackendUnitTestsAsync(
-        [McpToolTrigger(CommonConstant.AskBackendStructureDocumentToolName, CommonConstant.AskBackendTestsDocumentToolDescription)] ToolInvocationContext context,
+        [McpToolTrigger(CommonConstant.AskBackendTestsDocumentToolName, CommonConstant.AskBackendTestsDocumentToolDescription)] ToolInvocationContext context,
         [McpToolProperty(CommonConstant.QuestionPropertyName, CommonConstant.PropertyTypeString, CommonConstant.QuestionPropertyDescription)] string question)
     {
         var response = new ResponseModel<string>();
