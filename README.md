@@ -1,4 +1,4 @@
-# My Model Contest Protocol
+# My Model Context Protocol
 
 ## Overview
 
