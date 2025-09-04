@@ -16,5 +16,8 @@ public class CustomerApiClient(
         return data ?? [];
     }
 
-    protected override string GeApiAction() => "/api/v1/customer";
+    protected override string GeApiAction()
+    {
+        return "/api/v1/customer";
+    }
 }

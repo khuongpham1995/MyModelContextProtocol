@@ -4,7 +4,7 @@ public class ResponseModel<T>
 {
     public string? Error { get; set; }
     public T? Data { get; set; }
-    public bool IsSuccess {get; set;}
+    public bool IsSuccess { get; set; }
 
     public void Succeed(T? data = default)
     {

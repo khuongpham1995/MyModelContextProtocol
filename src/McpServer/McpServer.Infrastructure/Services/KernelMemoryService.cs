@@ -10,13 +10,14 @@ public class KernelMemoryService(IKernelMemory kernelMemory) : IKernelMemoryServ
         var result = await kernelMemory.AskAsync(question, cancellationToken: cancellationToken);
         return result.Result;
     }
-    
-    public async Task<string> UploadDocumentAsync(string filePath, string documentId, CancellationToken cancellationToken = default)
+
+    public async Task<string> UploadDocumentAsync(string filePath, string documentId,
+        CancellationToken cancellationToken = default)
     {
         var result = await kernelMemory.ImportDocumentAsync(filePath, documentId, cancellationToken: cancellationToken);
         return result;
     }
-    
+
     public async Task<bool> IsDocumentReadyAsync(string documentId, CancellationToken cancellationToken = default)
     {
         var result = await kernelMemory.IsDocumentReadyAsync(documentId, cancellationToken: cancellationToken);

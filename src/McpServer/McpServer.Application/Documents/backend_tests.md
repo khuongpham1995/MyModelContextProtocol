@@ -1,21 +1,22 @@
 # Unit Testing Guidelines (xUnit + FluentAssertions)
 
-This document provides best practices and guidelines for writing unit tests in .NET using the xUnit framework and FluentAssertions library.
+This document provides best practices and guidelines for writing unit tests in .NET using the xUnit framework and
+FluentAssertions library.
 
 ## 1. Project Structure
 
-- **Tests** (folder or project)  
-  - **Api.UnitTests** (project)  
-  - **Modules.User.UnitTests** (project)  
-    - **Application** (folder)  
-    - **Domain** (folder)  
-    - **Endpoints** (folder)  
-    - **Infrastructure** (folder)
+- **Tests** (folder or project)
+    - **Api.UnitTests** (project)
+    - **Modules.User.UnitTests** (project)
+        - **Application** (folder)
+        - **Domain** (folder)
+        - **Endpoints** (folder)
+        - **Infrastructure** (folder)
 
 ## 2. Naming Conventions
 
 - **Test Class**: `<ClassUnderTest>Tests`  
-  e.g., `CreateUserCommandHandlerTests`  
+  e.g., `CreateUserCommandHandlerTests`
 - **Test Methods**: `<MethodUnderTest>_<Scenario>_<ExpectedResult>`  
   e.g., `Handle_GivenValidCommand_ShouldReturnSuccess`
 

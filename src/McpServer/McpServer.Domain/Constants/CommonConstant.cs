@@ -7,18 +7,24 @@ public sealed class CommonConstant
     public const string GetCustomerToolName = "get_all_customers";
     public const string GetCustomerToolDescription = "Retrieves or gets existing customers in the system.";
     public const string GetCustomerByNameToolName = "get_customers_by_name";
-    public const string GetCustomerByNameToolDescription = 
+
+    public const string GetCustomerByNameToolDescription =
         "Retrieves or gets existing customers that have name field matching input in the system.";
+
     public const string DeleteCustomerToolName = "delete_customer";
     public const string DeleteCustomerToolDescription = "Deletes an existing customer in the system.";
     public const string UpdateCustomerToolName = "update_customer";
     public const string UpdateCustomerToolDescription = "Updates an existing customer in the system.";
     public const string AskBackendStructureDocumentToolName = "ask_backend_structure";
+
     public const string AskBackendStructureDocumentToolDescription =
         "Analyze the backend project structure document and generate application code based on its content.";
+
     public const string AskBackendTestsDocumentToolName = "ask_backend_tests";
+
     public const string AskBackendTestsDocumentToolDescription =
         "Analyze the unit testing guidelines document and generate corresponding unit test code for the application components.";
+
     public const string CustomerIdPropertyDescription = "The identity number of the customer.";
     public const string CustomerNamePropertyDescription = "The name of the customer.";
     public const string CustomerEmailPropertyDescription = "The email address of the customer.";

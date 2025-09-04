@@ -8,9 +8,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "McpServer.Application", "Mc
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{8E887382-0978-40D5-8F49-7D062E7BEF48}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "McpServer.Function", "McpServer.Function\McpServer.Function.csproj", "{FE2FA002-BE9B-4139-B89D-12C5516CB47A}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "McpServer.WebService", "McpServer.WebService\McpServer.WebService.csproj", "{88C560D3-10F5-4388-BDCD-7248C36AD1BC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "McpServer.Presentation", "McpServer.Presentation\McpServer.Presentation.csproj", "{88C560D3-10F5-4388-BDCD-7248C36AD1BC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -58,18 +56,6 @@ Global
 		{4BAFA963-E7D0-45A0-826C-E703D87503FE}.Release|x64.Build.0 = Release|Any CPU
 		{4BAFA963-E7D0-45A0-826C-E703D87503FE}.Release|x86.ActiveCfg = Release|Any CPU
 		{4BAFA963-E7D0-45A0-826C-E703D87503FE}.Release|x86.Build.0 = Release|Any CPU
-		{FE2FA002-BE9B-4139-B89D-12C5516CB47A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FE2FA002-BE9B-4139-B89D-12C5516CB47A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FE2FA002-BE9B-4139-B89D-12C5516CB47A}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{FE2FA002-BE9B-4139-B89D-12C5516CB47A}.Debug|x64.Build.0 = Debug|Any CPU
-		{FE2FA002-BE9B-4139-B89D-12C5516CB47A}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{FE2FA002-BE9B-4139-B89D-12C5516CB47A}.Debug|x86.Build.0 = Debug|Any CPU
-		{FE2FA002-BE9B-4139-B89D-12C5516CB47A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FE2FA002-BE9B-4139-B89D-12C5516CB47A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FE2FA002-BE9B-4139-B89D-12C5516CB47A}.Release|x64.ActiveCfg = Release|Any CPU
-		{FE2FA002-BE9B-4139-B89D-12C5516CB47A}.Release|x64.Build.0 = Release|Any CPU
-		{FE2FA002-BE9B-4139-B89D-12C5516CB47A}.Release|x86.ActiveCfg = Release|Any CPU
-		{FE2FA002-BE9B-4139-B89D-12C5516CB47A}.Release|x86.Build.0 = Release|Any CPU
 		{88C560D3-10F5-4388-BDCD-7248C36AD1BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{88C560D3-10F5-4388-BDCD-7248C36AD1BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88C560D3-10F5-4388-BDCD-7248C36AD1BC}.Debug|x64.ActiveCfg = Debug|Any CPU

@@ -2,7 +2,7 @@ using FluentValidation;
 using McpServer.Domain.Interfaces;
 using MediatR;
 
-namespace McpServer.Application.KernelMemoryHandlers;
+namespace McpServer.Application.Handlers.Document;
 
 public enum Document
 {
@@ -12,7 +12,8 @@ public enum Document
 
 public record AskBackendQuestionCommand(string Question, Document Type = Document.BackendStructure) : IRequest<string>;
 
-public class AskBackendQuestionHandler(IKernelMemoryService kernelMemoryService) : IRequestHandler<AskBackendQuestionCommand, string>
+public class AskBackendQuestionHandler(IKernelMemoryService kernelMemoryService)
+    : IRequestHandler<AskBackendQuestionCommand, string>
 {
     private const string BackendDocument = "backend_structure.md";
     private const string TestDocument = "backend_tests.md";
@@ -21,10 +22,7 @@ public class AskBackendQuestionHandler(IKernelMemoryService kernelMemoryService)
     {
         var document = request.Type == Document.BackendStructure ? BackendDocument : TestDocument;
         var filePath = Path.Combine(AppContext.BaseDirectory, "Documents", document);
-        if (!File.Exists(filePath))
-        {
-            throw new FileNotFoundException($"File not found: {filePath}");
-        }
+        if (!File.Exists(filePath)) throw new FileNotFoundException($"File not found: {filePath}");
         var documentId = document.Replace(".md", string.Empty).ToLowerInvariant();
 
         while (!await kernelMemoryService.IsDocumentReadyAsync(documentId, cancellationToken))

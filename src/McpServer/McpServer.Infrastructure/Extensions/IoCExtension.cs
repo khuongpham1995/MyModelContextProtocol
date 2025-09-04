@@ -14,14 +14,17 @@ public static class IoCExtension
     {
         services.AddHttpClient<ICustomerApiClient, CustomerApiClient>(client =>
         {
-            var domain = configuration["MockApi:BaseUrl"] ?? throw new ArgumentNullException(nameof(configuration), "Configuration key 'MockApi:BaseUrl' is missing");
+            var domain = configuration["MockApi:BaseUrl"] ?? throw new ArgumentNullException(nameof(configuration),
+                "Configuration key 'MockApi:BaseUrl' is missing");
             client.BaseAddress = new Uri(domain);
             client.DefaultRequestHeaders
-                  .Accept
-                  .Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                .Accept
+                .Add(new MediaTypeWithQualityHeaderValue("application/json"));
         });
-        
-        var kernelMemoryApiUrl = configuration["KernelMemory:BaseUrl"] ?? throw new ArgumentNullException(nameof(configuration), "Configuration key 'KernelMemory:BaseUrl' is missing");
+
+        var kernelMemoryApiUrl = configuration["KernelMemory:BaseUrl"] ??
+                                 throw new ArgumentNullException(nameof(configuration),
+                                     "Configuration key 'KernelMemory:BaseUrl' is missing");
         services.AddSingleton<IKernelMemory>(_ => new MemoryWebClient(kernelMemoryApiUrl));
         services.AddScoped<IKernelMemoryService, KernelMemoryService>();
     }

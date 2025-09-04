@@ -1,22 +1,23 @@
 using System.ComponentModel;
 using FluentValidation;
-using McpServer.Application.KernelMemoryHandlers;
+using McpServer.Application.Handlers.Document;
 using McpServer.Domain.Constants;
 using McpServer.Domain.Models;
 using MediatR;
 using ModelContextProtocol.Server;
 
-namespace McpServer.WebService.McpTools;
+namespace McpServer.Presentation.McpTools;
 
 [McpServerToolType]
 public sealed class DocumentTool(
     ISender sender,
     ILogger<DocumentTool> logger)
 {
-    [McpServerTool(Name = CommonConstant.AskBackendStructureDocumentToolName),
-     Description(CommonConstant.AskBackendStructureDocumentToolDescription)]
+    [McpServerTool(Name = CommonConstant.AskBackendStructureDocumentToolName)]
+    [Description(CommonConstant.AskBackendStructureDocumentToolDescription)]
     public async Task<ResponseModel<string>> AskBackendStructureAsync(
-        [Description(CommonConstant.QuestionPropertyDescription)] string? question,
+        [Description(CommonConstant.QuestionPropertyDescription)]
+        string? question,
         CancellationToken ct = default)
     {
         var response = new ResponseModel<string>();
@@ -45,10 +46,11 @@ public sealed class DocumentTool(
         return response;
     }
 
-    [McpServerTool(Name = CommonConstant.AskBackendTestsDocumentToolName),
-     Description(CommonConstant.AskBackendTestsDocumentToolDescription)]
+    [McpServerTool(Name = CommonConstant.AskBackendTestsDocumentToolName)]
+    [Description(CommonConstant.AskBackendTestsDocumentToolDescription)]
     public async Task<ResponseModel<string>> AskBackendUnitTestsAsync(
-        [Description(CommonConstant.QuestionPropertyDescription)] string? question,
+        [Description(CommonConstant.QuestionPropertyDescription)]
+        string? question,
         CancellationToken ct = default)
     {
         var response = new ResponseModel<string>();

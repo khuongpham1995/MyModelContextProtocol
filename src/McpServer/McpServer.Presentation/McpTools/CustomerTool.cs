@@ -1,20 +1,21 @@
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using McpServer.Application.CustomerHandlers;
+using McpServer.Application.Handlers.Customer;
 using McpServer.Domain.Constants;
 using McpServer.Domain.Entities;
 using McpServer.Domain.Models;
 using MediatR;
 using ModelContextProtocol.Server;
 
-namespace McpServer.WebService.McpTools;
+namespace McpServer.Presentation.McpTools;
 
 [McpServerToolType]
 public sealed class CustomerTool(
     ISender sender,
     ILogger<CustomerTool> logger)
 {
-    [McpServerTool(Name =CommonConstant.GetCustomerToolName), Description(CommonConstant.GetCustomerToolDescription)]
+    [McpServerTool(Name = CommonConstant.GetCustomerToolName)]
+    [Description(CommonConstant.GetCustomerToolDescription)]
     public async Task<ResponseModel<IReadOnlyCollection<Customer>>> GetCustomers()
     {
         var response = new ResponseModel<IReadOnlyCollection<Customer>>();
@@ -22,13 +23,9 @@ public sealed class CustomerTool(
         {
             var customers = await sender.Send(new GetCustomersQuery());
             if (customers.Count == 0)
-            {
                 response.Fail(CommonConstant.NoCustomersFoundMessage);
-            }
             else
-            {
                 response.Succeed(customers);
-            }
         }
         catch (Exception ex)
         {
@@ -39,9 +36,11 @@ public sealed class CustomerTool(
         return response;
     }
 
-    [McpServerTool(Name =CommonConstant.GetCustomerByNameToolName), Description(CommonConstant.GetCustomerByNameToolDescription)]
+    [McpServerTool(Name = CommonConstant.GetCustomerByNameToolName)]
+    [Description(CommonConstant.GetCustomerByNameToolDescription)]
     public async Task<ResponseModel<IReadOnlyCollection<Customer>>> GetCustomersByName(
-        [Description(CommonConstant.CustomerNamePropertyDescription)] string? name
+        [Description(CommonConstant.CustomerNamePropertyDescription)]
+        string? name
     )
     {
         var response = new ResponseModel<IReadOnlyCollection<Customer>>();
@@ -59,13 +58,19 @@ public sealed class CustomerTool(
         return response;
     }
 
-    [McpServerTool(Name =CommonConstant.CreateCustomerToolName), Description(CommonConstant.CreateCustomerToolDescription)]
+    [McpServerTool(Name = CommonConstant.CreateCustomerToolName)]
+    [Description(CommonConstant.CreateCustomerToolDescription)]
     public async Task<ResponseModel<Customer>> CreateCustomer(
-        [Description(CommonConstant.CustomerNamePropertyDescription)] string? name,
-        [Description(CommonConstant.CustomerAddressPropertyDescription)] string? address,
-        [Description(CommonConstant.CustomerEmailPropertyDescription)] string? email,
-        [Description(CommonConstant.CustomerPhonePropertyDescription)] string? phone,
-        [Description(CommonConstant.CustomerAvatarPropertyDescription)] string? avatar
+        [Description(CommonConstant.CustomerNamePropertyDescription)]
+        string? name,
+        [Description(CommonConstant.CustomerAddressPropertyDescription)]
+        string? address,
+        [Description(CommonConstant.CustomerEmailPropertyDescription)]
+        string? email,
+        [Description(CommonConstant.CustomerPhonePropertyDescription)]
+        string? phone,
+        [Description(CommonConstant.CustomerAvatarPropertyDescription)]
+        string? avatar
     )
     {
         var response = new ResponseModel<Customer>();
@@ -88,14 +93,21 @@ public sealed class CustomerTool(
         return response;
     }
 
-    [McpServerTool(Name =CommonConstant.UpdateCustomerToolName), Description(CommonConstant.UpdateCustomerToolDescription)]
+    [McpServerTool(Name = CommonConstant.UpdateCustomerToolName)]
+    [Description(CommonConstant.UpdateCustomerToolDescription)]
     public async Task<ResponseModel<Customer>> UpdateCustomer(
-        [Description(CommonConstant.CustomerIdPropertyDescription)] int id,
-        [Description(CommonConstant.CustomerNamePropertyDescription)] string? name,
-        [Description(CommonConstant.CustomerAddressPropertyDescription)] string? address,
-        [Description(CommonConstant.CustomerEmailPropertyDescription)] string? email,
-        [Description(CommonConstant.CustomerPhonePropertyDescription)] string? phone,
-        [Description(CommonConstant.CustomerAvatarPropertyDescription)] string? avatar
+        [Description(CommonConstant.CustomerIdPropertyDescription)]
+        int id,
+        [Description(CommonConstant.CustomerNamePropertyDescription)]
+        string? name,
+        [Description(CommonConstant.CustomerAddressPropertyDescription)]
+        string? address,
+        [Description(CommonConstant.CustomerEmailPropertyDescription)]
+        string? email,
+        [Description(CommonConstant.CustomerPhonePropertyDescription)]
+        string? phone,
+        [Description(CommonConstant.CustomerAvatarPropertyDescription)]
+        string? avatar
     )
     {
         var response = new ResponseModel<Customer>();
@@ -118,9 +130,11 @@ public sealed class CustomerTool(
         return response;
     }
 
-    [McpServerTool(Name =CommonConstant.DeleteCustomerToolName), Description(CommonConstant.DeleteCustomerToolDescription)]
+    [McpServerTool(Name = CommonConstant.DeleteCustomerToolName)]
+    [Description(CommonConstant.DeleteCustomerToolDescription)]
     public async Task<ResponseModel<Customer>> DeleteCustomer(
-        [Description(CommonConstant.CustomerIdPropertyDescription)] int id
+        [Description(CommonConstant.CustomerIdPropertyDescription)]
+        int id
     )
     {
         var response = new ResponseModel<Customer>();

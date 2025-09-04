@@ -1,8 +1,8 @@
-using MediatR;
-using FluentValidation;
-using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
+using FluentValidation;
 using McpServer.Application.Behaviors;
+using MediatR;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace McpServer.Application.Extensions;
 

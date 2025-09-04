@@ -2,9 +2,14 @@ using FluentValidation;
 using McpServer.Domain.Interfaces;
 using MediatR;
 
-namespace McpServer.Application.CustomerHandlers;
+namespace McpServer.Application.Handlers.Customer;
 
-public record UpdateCustomerCommand(string? Name, string? Email, string? Phone = null, string? Address = null, string? Avatar = null) : IRequest
+public record UpdateCustomerCommand(
+    string? Name,
+    string? Email,
+    string? Phone = null,
+    string? Address = null,
+    string? Avatar = null) : IRequest
 {
     public int Id { get; set; }
 }

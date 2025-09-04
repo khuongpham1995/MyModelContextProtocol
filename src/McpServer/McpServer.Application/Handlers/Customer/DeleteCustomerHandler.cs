@@ -2,7 +2,7 @@ using FluentValidation;
 using McpServer.Domain.Interfaces;
 using MediatR;
 
-namespace McpServer.Application.CustomerHandlers;
+namespace McpServer.Application.Handlers.Customer;
 
 public record DeleteCustomerCommand(int Id) : IRequest;
 
