@@ -5,7 +5,8 @@
         <OutputType>Exe</OutputType>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <LangVersion>13</LangVersion>
+        <LangVersion>12</LangVersion>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     </PropertyGroup>
     <ItemGroup>
         <FrameworkReference Include="Microsoft.AspNetCore.App" />
@@ -34,5 +35,10 @@
       <ProjectReference Include="../McpServer.Application/McpServer.Application.csproj" />
       <ProjectReference Include="../McpServer.Domain/McpServer.Domain.csproj" />
       <ProjectReference Include="../McpServer.Infrastructure/McpServer.Infrastructure.csproj" />
+    </ItemGroup>
+    <ItemGroup>
+      <Content Include="..\.dockerignore">
+        <Link>.dockerignore</Link>
+      </Content>
     </ItemGroup>
 </Project>
